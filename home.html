@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="/styles/root.css">
-        <link rel="stylesheet" type="text/css" href="/styles/editor.css">
-        <link rel="stylesheet" type="text/css" href="/styles/top.css">
-        <link rel="stylesheet" type="text/css" href="/styles/left.css">
-        <link rel="stylesheet" type="text/css" href="/styles/menu.css">
-        <link rel="stylesheet" type="text/css" href="/styles/modal.css">
+        <link rel="stylesheet" type="text/css" href="./styles/root.css">
+        <link rel="stylesheet" type="text/css" href="./styles/editor.css">
+        <link rel="stylesheet" type="text/css" href="./styles/top.css">
+        <link rel="stylesheet" type="text/css" href="./styles/left.css">
+        <link rel="stylesheet" type="text/css" href="./styles/menu.css">
+        <link rel="stylesheet" type="text/css" href="./styles/modal.css">
     </head>
 <body>
     <div class="top-container">
         <div class="menu-items">
-            <img src="/assets/logo.png" class="logo">
+            <img src="./assets/logo.png" class="logo">
             <a href="#">File</a>
             <a href="#">Edit</a>
             <a href="#">View</a>
@@ -19,7 +19,7 @@
         </div>
         <div class="window-menu">
             <div class="window-button" onclick="minimize()">━</div>
-            <div class="window-button" onclick="saveTabs(); closeWindow()">X</div>
+            <div class="window-button" onclick="closeWindow()">X</div>
         </div>
     </div>
     <div class="middle-container">
@@ -37,7 +37,7 @@
                 <div class="news-container">
                     <div class="news-item">
                         <div class="news-header">
-                            <img class="news-icon" src="/assets/icon.png">
+                            <img class="news-icon" src="./assets/icon.png">
                             <p>News</p>
                         </div>
                         <p class="news-title">Vision Release!</p>
@@ -45,7 +45,7 @@
                     </div>
                     <div class="news-item">
                         <div class="news-header">
-                            <img class="news-icon" src="/assets/icon.png">
+                            <img class="news-icon" src="./assets/icon.png">
                             <p>News</p>
                         </div>
                         <p class="news-title">Vision Release!</p>
@@ -81,7 +81,7 @@
         <div id="home-container">
             <div class="welcome-section">
                 <div class="welcome-header">
-                    <img src="/assets/profile.png">
+                    <img src="./assets/profile.png">
                     <div>
                         <h1>Welcome back, Guest</h1>
                         <p>Check out the latest scripts!</p>
@@ -162,7 +162,7 @@
     </div>
 </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs/loader.min.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/mouse.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/mouse.js"></script>
     <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
 </html>
