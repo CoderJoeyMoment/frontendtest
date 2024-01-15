@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Kontotra';
-    src: url('../fonts/Kontora-Black.otf') format('opentype');
+    src: url('./fonts/Kontora-Black.otf') format('opentype');
     font-weight: 600;
     font-style: normal;
 }
