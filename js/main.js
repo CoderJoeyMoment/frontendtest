@@ -433,26 +433,6 @@ buttons.forEach((button, index) => {
             Object.values(editors).forEach(editor => editor.layout());
             document.getElementById('action-buttons').style.display = 'flex';
         }
-
-        (async function () {
-            if (tabCount === 0) {
-                var getTabs = await pywebview.api.getTabs();
-                
-                if (Object.keys(getTabs).length > 0) {
-                    Object.keys(getTabs).forEach((tabId, index) => {
-                        addTab();
-                        let editor = editors[`container${tabCount}`];
-                        editor.setValue(getTabs[tabId]);
-                    });
-                }
-    
-                if (Object.keys(editors).length === 0) {
-                    addTab();
-                    switchEditor('container1');
-                };
-            }
-        })()
-
         createOverlap(button, index);
     });
 
@@ -559,15 +539,18 @@ function handleButtonClick(event) {
                     if (index > 0) {
                         const editorId = tab.id.replace('tabcontainer', 'container');
                         removeTab(tab.id, editorId);
+                        tabCount--;
                     }
                 });
                 break;
             case 'closeright-button':
                 let currentIndex = Array.from(allTabs).indexOf(document.getElementById(tabId));
                 allTabs.forEach((tab, index) => {
+                    console.log(index, currentIndex)
                     if (index > currentIndex) {
                         let editorId = tab.id.replace('tabcontainer', 'container');
                         removeTab(tab.id, editorId);
+                        tabCount--;
                     }
                 });
                 break;
