@@ -768,17 +768,22 @@ attachButton.addEventListener('click', function() {
         console.log(response)
         if (response[0] === true) {
             attachButton.style.border = '1px solid green';
+            printToConsole(response[1] || "Successfully attached.", 'info');
         } else {
             attachButton.style.border = '1px solid red';
             printToConsole(response[1] || "Unexpected error while attaching.", 'error');
-            
-            setTimeout(function() {
-                attachButton.style.border = '';
-            }, 2000);
         }
+        
+        setTimeout(function() {
+            attachButton.style.border = '';
+        }, 2000);
     }).catch(function(error) {
         attachButton.style.border = '1px solid red';
         console.error('Error during injection:', error);
+        
+        setTimeout(function() {
+            attachButton.style.border = '';
+        }, 2000);
     });
 });
 clearButton.addEventListener('click', function() {
