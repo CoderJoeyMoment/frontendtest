@@ -733,5 +733,8 @@ window.addEventListener('pywebviewready', (event) => {
             }
             input.addEventListener('change', handleSettingsChange);
         });
+
+        loadWidgets();
+        clientError("PATCH NOTES: Whats new?", "- Enhanced Console: Improved the console with new sections for problems and debugging, making it easier to troubleshoot issues.\n\n- UI Improvements: Added minimize and close buttons for better window management, along with a custom error UI for clearer feedback on issues.\n\n- Widget Enhancements: Upgraded widget functionality with the ability to create, execute, and save directly within the widget.\n\n- Settings Tab Upgrades: Introduced new features in the settings tab including auto-inject and auto-execute options for streamlined workflows.\n\n- Auto Update Loader: Implemented an auto-update feature for the loader to ensure you're always working with the latest version.\n\n- Performance Boost: Fixed window dragging latency and added threading for attaching and executing processes, utilizing a thread pool for increased speed.\n\n- UI Directory Tree: Added UI elements and functionality for a directory tree, enabling users to open folders within the IDE effortlessly.\n\n- Persistent Settings and Tabs: Enhanced the IDE to save settings and tabs, allowing for a seamless development experience across sessions.\n\n- Bridge Fix: Resolved an issue where the bridge would break on strings containing symbols, ensuring more robust handling of data.\n\n- RC2 Loader Update: Released RC2 LOADER with improvements, now without TP and toolless for a cleaner experience.\n\n- Improved Authentication: Updated the login system to include a 'Remember Me' feature, making it more convenient to access your workspace.")
     })()
 });
