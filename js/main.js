@@ -766,10 +766,15 @@ attachButton.addEventListener('click', function() {
 
     pywebview.api.attach().then(function(response) {
         console.log(response)
-        if (response.success === true) {
+        if (response[0] === true) {
             attachButton.style.border = '1px solid green';
         } else {
             attachButton.style.border = '1px solid red';
+            printToConsole(response[1] || "Unexpected error while attaching.", 'error');
+            
+            setTimeout(function() {
+                attachButton.style.border = '';
+            }, 2000);
         }
     }).catch(function(error) {
         attachButton.style.border = '1px solid red';
@@ -910,8 +915,4 @@ window.addEventListener('pywebviewready', (event) => {
     })()
 });
 
-printToConsole("print test trioro", "normal")
-printToConsole("print test trioro", "normal")
-printToConsole("print test trioro", "normal")
-printToConsole("print test trioro", "normal")
-printToConsole("print test trioro", "normal")
+printToConsole("Vision authentication successful.", 'normal');
