@@ -677,11 +677,12 @@ async function updateNews() {
 
     var news = await fetch('https://raw.githubusercontent.com/RuneSoftworks/public-test/main/news.json').then(response => response.json());
 
+
     news.forEach(function(newsItem) {
         newHtml += `
             <div class="news-item">
             <div class="news-header">
-                <img class="news-icon" src="./assets/icon.png">
+                <img class="news-icon" src="../assets/icon.png">
                 <p>News</p>
             </div>
             <p class="news-title">${newsItem.title}</p>
@@ -702,6 +703,7 @@ updateNews();
 window.addEventListener('pywebviewready', (event) => {
     (async function () {
         const credentials = await pywebview.api.getCredentials();
+        
         welcomeHeaderText.innerHTML = `Welcome back, ${credentials['username']}`;
 
         var getTabs = await pywebview.api.getTabs();
@@ -728,8 +730,6 @@ window.addEventListener('pywebviewready', (event) => {
                 
             }
             input.addEventListener('change', handleSettingsChange);
-
-            console.log(settings, input.id, input.checked, settings[input.id]);
         });
     })()
 });
