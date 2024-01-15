@@ -22,7 +22,7 @@
     border: 1px solid #ffffff33;
     padding: 23px;
     border-radius: 10px;
-    width: 30%; 
+    width: 50%; 
     height: auto; 
     box-shadow: 0 5px 15px #00000080;
     transition: transform 0.2s ease-out, opacity 0.2s ease-out; 
@@ -103,4 +103,20 @@ button#confirmButton {
     display: block;
     width: 100%;
     box-sizing: border-box;
+}
+
+#errorMessage {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.grey-text {
+    color: #ffffffab;
+    font-size: 14px;
+}
+
+.white-text {
+    color: white;
+    font-size: 16px;
 }

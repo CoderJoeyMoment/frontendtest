@@ -1,23 +1,30 @@
 .editor-container {
+    display: flex;
     border-left: 1px #2e2933 solid;
     color: white;
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     background-color: var(--highlight);
-    display: flex;
     flex-direction: column;
     overflow: hidden;
-    width: 99%;
+    width: 100%;
     align-items: center;
 }
 
+.editor-section {
+    display: block;
+    margin-top: 10px;
+    height: 55%;
+    width: 100%;
+    border-bottom: 1px solid #2e2933;
+}
+
 .editor {
-    height: 90%;
+    height: 100%;
     resize: none;
 }
 
 .tabs {
-    margin-top: 9px;
     display: flex;
     justify-content: flex-start; 
 }
@@ -33,6 +40,15 @@
     margin-right: 5px;
 }
 
+#tabList::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    background: #222124;
+}
+
+#tabList::-webkit-scrollbar-thumb:hover {
+    background: #303030;
+}
+
 .tab-button {
     width: 150px;
     height: 40px;
@@ -46,8 +62,10 @@
     padding: 15px;
     padding-left: 11px;
     padding-right: 13px;
+    cursor: pointer;
     transition: 0.5s ease;
 }
+
 .tab-button:hover {
     background-color: #232225;
 }
@@ -68,6 +86,7 @@
     outline: none;
     border: none;
     transition: 0.3s ease;
+    cursor: pointer;
 }
 
 .add-tab {
@@ -78,6 +97,12 @@
     margin-left: 5px;
     color: white;
     background-color: var(--highlight2);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.add-tab:hover {
+    background-color: #201e1e;
 }
 
 .add-tab svg {
@@ -91,7 +116,7 @@
     display: none;
     flex-direction: row;
     position: absolute;
-    top: 420px;
+    top: 270px;
     right: 30px;
     z-index: 9999;
 }
@@ -104,9 +129,74 @@
     background-color: #111011;
     border-radius: 50px;
     padding: 10px;
-    border: red;
+    border: none;
     outline: none;
     width: 40px;
     height: 40px;
     cursor: pointer;
+}
+
+.console-section {
+    width: 100%;
+    height: 40%;
+    background-color: #1b1a1d;
+    border-top-right-radius: 12px;
+}
+
+.shadow {
+    z-index: 999990000999;
+    position: absolute;
+    height: 60px;
+    top: 380px;
+    width: 100%;
+    background: linear-gradient(to bottom, #1b1a1d, #00000000);
+    
+}
+
+.console-tabs {
+    margin-top: 50px;
+    justify-content: flex-start; 
+}
+
+.console-button { 
+    width: 90px;
+    margin-top: 0;
+    margin-right: 5px;
+    height: 40px;
+    text-align: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    padding: 15px;
+    padding-left: 11px;
+    padding-right: 13px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.console-button:hover {
+    background-color: #232225;
+}
+.console-button.active {
+    background-color: #1b1a1d;
+}
+
+.console-output::-webkit-scrollbar, .problems-output::-webkit-scrollbar, .debug-output::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.console-output, .problems-output, .debug-output {
+    height: 55%;
+    width: 97%;
+    font-size: 12px;
+    overflow-y: auto;
+    padding-left: 15px;
+    color: #ffffff9c;
+    padding-top: 15px;
+    font-weight: 200;
+    word-wrap: break-word;
 }

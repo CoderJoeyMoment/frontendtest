@@ -6,11 +6,13 @@
 }
 
 :root {
-    background-color: #010216;
+    --bg: #0f0f10;
+    --highlight: #6144a6;
+    --highlight2: #1b1724;
+    background-color: var(--bg);
     font-family: 'Kontotra';
     overflow: hidden;
     user-select: none;
-    height: 100%;
 }
 
 body {
@@ -24,7 +26,7 @@ body {
 
 .progress-text {
     margin-left: 34px;
-    margin-top: 40px; 
+    margin-top: 55px; 
     color: white; 
     font-size: 25px;
     font-weight: 600;
@@ -36,15 +38,15 @@ body {
     margin-left: 60px;
     width: 6px;
     height: 350px;
-    background-color: #010216;
-    outline: 1px solid #6C63FF;
+    background-color: var(--bg);
+    outline: 1px solid var(--highlight);
     border-radius: 7px;
 }
 
 .filler {
     position: absolute;
     top: 0;
-    background-color: #6C63FF;
+    background-color: #825cdb;;
     width: 100%;
     height: 0%;
     border-radius: 7px;
@@ -57,8 +59,8 @@ body {
     width: 15px;
     left: -14px;
     height: 15px;
-    background-color: #010216;
-    outline: 1px solid #6C63FF;
+    background-color: var(--bg);
+    outline: 1px solid var(--highlight);
     border-radius: 50%;
 }
 
@@ -93,10 +95,10 @@ body {
 .blur-background {
     margin-top: -200px;
     margin-left: 620px;
-    width: 600px;
-    height: 600px;
-    background-color: #6816b42c;
-    filter: blur(100px);
+    width: 700px;
+    height: 700px;
+    background-color: var(--highlight2);
+    filter: blur(150px);
     z-index: -1;
 }
 
@@ -126,7 +128,7 @@ body {
     padding: 10px;
     margin-bottom: 10px;
     background-color: transparent;
-    border: 1px solid #6C63FF;
+    border: 1px solid var(--highlight);
     color: white;
     border-radius: 7px;
     box-sizing: border-box;
@@ -138,7 +140,7 @@ body {
     font-size: 12px;
     width: 90%;
     padding: 10px;
-    background-color: #6C63FF;
+    background-color: var(--highlight);
     border: none;
     color: white;
     cursor: pointer;
@@ -151,7 +153,7 @@ body {
 }
 
 .signup-link {
-    color: #6C63FF;
+    color: var(--highlight);
     text-decoration: none;
     font-weight: 600;
     margin-left: 3px;
@@ -203,10 +205,10 @@ body {
     width: 64px;
     height: 64px;
     margin: 8px;
-    border: 8px solid #6C63FF;
+    border: 8px solid var(--highlight);
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #6C63FF transparent transparent transparent;
+    border-color: var(--highlight) transparent transparent transparent;
 }
 
 .lds-ring div:nth-child(1) {
@@ -285,7 +287,7 @@ input[type="password"]::-ms-clear {
 
 @keyframes fill {
     100% {
-        box-shadow: inset 0px 0px 0px 30px #6C63FF
+        box-shadow: inset 0px 0px 0px 30px var(--highlight)
     }
 }
 

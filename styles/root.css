@@ -55,3 +55,27 @@ input {
     right: 0;
     margin-right: 8px;
 }
+
+*::-webkit-scrollbar {
+    width: 7px;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+*::-webkit-scrollbar-corner {
+    background: transparent
+}
+*::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    background: var(--highlight2);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #303030;
+}
+
+*::-webkit-scrollbar-button {
+    display: none;
+}
