@@ -45,6 +45,7 @@ const filesContainer = document.querySelector("#dirwrapper");
 const consoleButtons = document.querySelectorAll('.console-button');
 const consoleOutputs = document.querySelectorAll('.console-section > div');
 const newsDiv = document.querySelector('.news-container');
+const settingsDiv = document.getElementById('settings-container');
 
 require.config(monacoConfig);
 require(['vs/editor/editor.main'], function() {
