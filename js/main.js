@@ -684,7 +684,7 @@ async function updateNews() {
         newHtml += `
             <div class="news-item">
             <div class="news-header">
-                <img class="news-icon" src="../assets/icon.png">
+                <img class="news-icon" src="./assets/icon.png">
                 <p>News</p>
             </div>
             <p class="news-title">${newsItem.title}</p>
