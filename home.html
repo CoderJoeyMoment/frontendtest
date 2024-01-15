@@ -56,8 +56,8 @@
             <div class="script">
                 <p id="title">Script Viewer</p>
                 <p id="description">View your scripts stored locally</p>
-                <button id="new-folder"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M22 14v-2.202c0-2.632 0-3.949-.77-4.804a2.984 2.984 0 0 0-.224-.225C20.151 6 18.834 6 16.202 6h-.374c-1.153 0-1.73 0-2.268-.153a4 4 0 0 1-.848-.352C12.224 5.224 11.816 4.815 11 4l-.55-.55c-.274-.274-.41-.41-.554-.53a4 4 0 0 0-2.18-.903C7.53 2 7.336 2 6.95 2c-.883 0-1.324 0-1.692.07A4 4 0 0 0 2.07 5.257C2 5.626 2 6.068 2 6.95V14c0 3.771 0 5.657 1.172 6.828C4.343 22 6.229 22 10 22h4c3.771 0 5.657 0 6.828-1.172C22 19.657 22 17.771 22 14" opacity=".5"/><path fill="white" d="M12.25 10a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75"/></svg><p>New Folder</p>
-                </button>
+                <button id="new-folder"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M22 14v-2.202c0-2.632 0-3.949-.77-4.804a2.984 2.984 0 0 0-.224-.225C20.151 6 18.834 6 16.202 6h-.374c-1.153 0-1.73 0-2.268-.153a4 4 0 0 1-.848-.352C12.224 5.224 11.816 4.815 11 4l-.55-.55c-.274-.274-.41-.41-.554-.53a4 4 0 0 0-2.18-.903C7.53 2 7.336 2 6.95 2c-.883 0-1.324 0-1.692.07A4 4 0 0 0 2.07 5.257C2 5.626 2 6.068 2 6.95V14c0 3.771 0 5.657 1.172 6.828C4.343 22 6.229 22 10 22h4c3.771 0 5.657 0 6.828-1.172C22 19.657 22 17.771 22 14" opacity=".5"/><path fill="white" d="M12.25 10a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75"/></svg><p>New Folder</p></button>
+                <div id="dirwrapper"></div>
             </div>
             <div class="settings">
                 <p id="title">Settings</p>
@@ -68,13 +68,26 @@
             </div>
         </div>
         <div id="editor-container" class="editor-container">
-            <div class="tabs">
-                <div id="tabList"></div>
-                <button class="add-tab" id="addTabButton" onclick="addTab()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M12 22c-4.714 0-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12s0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22" opacity=".5"/><path fill="white" d="M12 8.25a.75.75 0 0 1 .75.75v2.25H15a.75.75 0 0 1 0 1.5h-2.25V15a.75.75 0 0 1-1.5 0v-2.25H9a.75.75 0 0 1 0-1.5h2.25V9a.75.75 0 0 1 .75-.75"/></svg></button>
+            <div id="editor-section" class="editor-section">
+                <div class="tabs">
+                    <div id="tabList"></div>
+                    <button class="add-tab" id="addTabButton" onclick="addTab()"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="white" d="M6.5 1.75a.75.75 0 0 0-1.5 0V5H1.75a.75.75 0 0 0 0 1.5H5v3.25a.75.75 0 0 0 1.5 0V6.5h3.25a.75.75 0 0 0 0-1.5H6.5z"/></svg></button>
+                </div>
+            </div>
+            <div class="console-tabs">
+                <button class="console-button">Console</button>
+                <button class="console-button">Problems</button>
+                <button class="console-button">Output</button>
+            </div>
+            <div class="shadow"></div>
+            <div class="console-section">
+                <div class="console-output">Nothing in the console</div>
+                <div class="problems-output">No problems detected</div>
+                <div class="debug-output">No debug information</div>
             </div>
         </div>
         <div id="action-buttons">
-            <button id="attach"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" fill-rule="evenodd" d="M3.213 3.213a4.142 4.142 0 0 0 0 5.858L14.93 20.787a4.142 4.142 0 0 0 5.858-5.858L9.07 3.213a4.142 4.142 0 0 0-5.858 0m6.132 5.018A.788.788 0 1 0 8.23 9.345A.788.788 0 0 0 9.345 8.23m2.784.928a.787.787 0 1 0-1.114 1.114a.787.787 0 0 0 1.114-1.114m3.712 3.712a.788.788 0 1 1-1.114 1.114a.788.788 0 0 1 1.114-1.114m.929 3.899a.787.787 0 1 0-1.114-1.114a.787.787 0 0 0 1.114 1.114m-3.713-3.713a.787.787 0 1 0-1.113-1.114a.787.787 0 0 0 1.113 1.114m.928 1.67a.788.788 0 1 1-1.114 1.114a.788.788 0 0 1 1.114-1.113M9.16 11.016a.787.787 0 1 1 1.114 1.114a.787.787 0 0 1-1.114-1.114" clip-rule="evenodd"/><path fill="white" d="M20.787 9.071a4.142 4.142 0 0 0-5.858-5.858L12 6.143L17.858 12zM12 17.858L6.142 12l-2.929 2.929a4.142 4.142 0 0 0 5.858 5.858z" opacity=".5"/></svg></button>
+            <button id="attach"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="white" opacity=".5"><path d="M17.804 9.11L14.89 6.196c-.8-.8-1.2-1.2-1.654-1.365a2.182 2.182 0 0 0-1.492 0c-.455.165-.855.565-1.654 1.365l-4.543 4.543a5.455 5.455 0 0 0 7.714 7.714l4.543-4.543c.8-.8 1.2-1.2 1.365-1.654a2.182 2.182 0 0 0 0-1.492c-.165-.455-.565-.855-1.365-1.654"/><path fill-rule="evenodd" d="M16.556 3.233a.795.795 0 0 1 1.125 0l3.086 3.086a.796.796 0 1 1-1.125 1.125l-3.086-3.086a.796.796 0 0 1 0-1.125" clip-rule="evenodd"/></g><path fill="white" d="m17.73 13.985l-7.715-7.714L8.89 7.396l7.714 7.714zM5.026 17.85a5.5 5.5 0 0 0 1.125 1.125l-1.793 1.792a.796.796 0 1 1-1.125-1.125zM16.91 8.215L15.783 7.09l1.752-1.752l1.125 1.125zm-1.543 8.133l-3.06-3.06a.796.796 0 1 0-1.126 1.124l3.061 3.06zm-1.736 1.736l-1.746-1.746a.795.795 0 1 0-1.125 1.125l1.672 1.672c.293-.196.571-.423.83-.682z"/></svg></button>
             <button id="execute"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path fill="white" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10" clip-rule="evenodd" opacity=".5"/><path fill="white" d="m15.414 13.059l-4.72 2.787C9.934 16.294 9 15.71 9 14.786V9.214c0-.924.934-1.507 1.694-1.059l4.72 2.787c.781.462.781 1.656 0 2.118"/></svg></button>
             <button id="clear"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path fill="white" d="M22.53 2.53a.75.75 0 1 0-1.06-1.06l-2.403 2.402a4.471 4.471 0 0 1 1.061 1.06zM2.449 11.411l.74 1.218a24.449 24.449 0 0 0 8.181 8.181l1.219.741c1.898.97 4.353.347 5.414-1.661c.5-.949.977-2.012 1.279-3.07a19.46 19.46 0 0 0 .712-4.33c.033-.64.049-.961-.104-1.357c-.152-.395-.416-.66-.944-1.187L14.12 5.12c-.491-.491-.737-.737-1.107-.89c-.37-.151-.664-.15-1.253-.148a17.191 17.191 0 0 0-4.581.635c-1.057.302-2.12.778-3.069 1.28c-2.008 1.06-2.63 3.515-1.661 5.413" opacity=".5"/><path fill="white" d="M19.643 4.358a4.445 4.445 0 0 0-6.287 0l-.038.037c.232.156.456.38.802.726l4.825 4.825c.302.302.518.517.675.72l.023-.022a4.445 4.445 0 0 0 0-6.286"/></svg></button>
         </div>
@@ -155,7 +168,7 @@
             </span>
             <div class="header">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3 10.417c0-3.198 0-4.797.378-5.335c.377-.537 1.88-1.052 4.887-2.081l.573-.196C10.405 2.268 11.188 2 12 2c.811 0 1.595.268 3.162.805l.573.196c3.007 1.029 4.51 1.544 4.887 2.081C21 5.62 21 7.22 21 10.417v1.574c0 5.638-4.239 8.375-6.899 9.536C13.38 21.842 13.02 22 12 22s-1.38-.158-2.101-.473C7.239 20.365 3 17.63 3 11.991z" opacity=".5"/><path fill="currentColor" d="M12 7.25a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V8a.75.75 0 0 1 .75-.75M12 16a1 1 0 1 0 0-2a1 1 0 0 0 0 2"/></svg>
-                <h2>Client Error!</h2>
+                <h2 id="errorTitle">Client Error!</h2>
             </div>
             <p id="errorMessage">Error Code</p>
         </div>
